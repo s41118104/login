@@ -31,14 +31,14 @@ def logout(request):
 
 def adduser(request):	
 	try:
-		user=User.objects.get(username="chenyenzhi")
+		user=User.objects.get(username="chenyenzhi123")
 	except:
 		user=None
 	if user!=None:
 		message = user.username + " 帳號已建立!"
 		return HttpResponse(message)
 	else:	# 建立 test 帳號			
-		user=User.objects.create_user("chenyenzhi","test@test.com.tw","a123456!")
+		user=User.objects.create_user("chenyenzhi123","test@test.com.tw","a123456!")
 		user.first_name="wen" # 姓名
 		user.last_name="lin"  # 姓氏
 		user.is_staff=True	# 工作人員狀態
